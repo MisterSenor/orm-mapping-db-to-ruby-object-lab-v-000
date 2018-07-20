@@ -87,7 +87,7 @@ class Student
 
       first_student = DB[:conn].execute(sql)[0]
       self.new_from_db(first_student)
-    end 
+    end
 
 
 end
