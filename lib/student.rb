@@ -26,7 +26,19 @@ class Student
 
     DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
-    end
+    end.first
+  end
+
+  def self.count_all_students_in_grade_9
+    #returns an array of all students in grade 9
+    sql = "SELECT * FROM students WHERE grade = 9"
+    DB[:conn].execute(sql)
+  end
+
+  def self.students_below_12th_grade
+    sql = "SELECT * FROM students WHERE grade < 12"
+    DB[:conn].execute(sql)
+    binding.pry
   end
 
   def save
