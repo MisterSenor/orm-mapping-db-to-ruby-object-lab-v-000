@@ -41,7 +41,6 @@ class Student
       self.new_from_db(row)
       binding.pry
     end
-    binding.pry
   end
 
   def save
